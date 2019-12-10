@@ -30,13 +30,17 @@ int main(){
 	int i, j;
 	int aux;
 	float aux2;
+	int k=0;
+	int temp;
+	int expAc1, expAc0;
+	int i1, i2;
 	//variables para los 0
-	int expAc1;
+	/*int expAc1;
 	int expAc0, Auw_expAc0;
 	int dexp;
 	int cont=0, cont2=0;
 	int k=0, k2=0;
-	int termul;
+	int termul;*/
 
 	printf("Ingrese el primer polinomio\n");
 	printf("Cuantos terminos tiene el primer polinomio\n");
@@ -124,21 +128,21 @@ int main(){
 		printf("%.2fx^%d ", pol2.terminos[i].coef, pol2.terminos[i].exp);
 	}
 	
-	printf("\n%d %d", pol1.terminos[0].exp, pol1.terminos[terminos-1].exp);
-	printf("%d %d", pol2.terminos[0].exp, pol2.terminos[terminos2-1].exp);
+	printf("\n###%d %d####  ", pol1.terminos[0].exp, pol1.terminos[terminos-1].exp);
+	printf("$$$$%d %d$$$$", pol2.terminos[0].exp, pol2.terminos[terminos2-1].exp);
 	
 	if((pol1.terminos[terminos-1].exp)>(pol2.terminos[terminos2-1].exp))//saber quien es mayor
 		expAc1 = pol1.terminos[terminos-1].exp;
 	else 
 		expAc1 = pol2.terminos[terminos2-1].exp;
-	printf("%d", expAc1);
+	printf(".....%d.....  ", expAc1);
 	
 	if((pol1.terminos[0].exp)<(pol2.terminos[0].exp))//saber el menor
 		expAc0 = pol1.terminos[0].exp;
 	else 
 		expAc0 = pol2.terminos[0].exp;
-	printf("%d", expAc0);
-	Auw_expAc0 = expAc0;
+	printf("......%d......", expAc0);
+	//Auw_expAc0 = expAc0;
 	
 	terminosf = (expAc1-expAc0)+1; //total de nuevo polinomio
 	
@@ -153,14 +157,73 @@ int main(){
 	}
 	
 	
-	
+	printf("\n");
 	for(i=0; i<terminosf; i++)
 	printf("%.2fx^%d  ", pol10.terminos[i].coef, pol10.terminos[i].exp);
-	
-	
-	if(pol10.terminos[i].exp == pol1.terminos[i].exp)
-		pol10.terminos[i].exp = 
-	
+
+//primera suma
+	for(i=0; i<=terminosf; i++)
+	{
+		
+		i1=i;
+		i2=0;
+	  //                        				i			0,1,2,3,4,5,6
+	  //										k				2,3,4
+		if(pol10.terminos[i].exp == pol1.terminos[k].exp)   
+		{	
+			temp = 1;
+			pol10.terminos[i].exp = pol10.terminos[i].exp;
+			pol10.terminos[i].coef = pol10.terminos[i].coef + pol1.terminos[k].coef;
+			k++;
+			i=i+temp;
+		}
+			
+		if(pol10.terminos[i].exp != pol1.terminos[k].exp)
+		{	
+			
+			pol10.terminos[i].exp = pol10.terminos[i].exp;
+			pol10.terminos[i].coef = pol10.terminos[i].coef;
+		}
+		i2=i;
+		if(i1!=i2)
+			i--;
+	}
+	printf("\n\n");
+	for(i=0; i<terminosf; i++)
+		printf("%.2fx^%d     ", pol10.terminos[i].coef, pol10.terminos[i].exp);
+
+//···········································································································
+//segunda suma
+	for(i=0; i<=terminosf; i++)
+	{
+		k=0; 
+		i1=i;
+		i2=0;
+	  //                        				i			0,1,2,3,4,5,6
+	  //										k				2,3,4
+		if(pol10.terminos[i].exp == pol2.terminos[k].exp)   
+		{	
+			temp = 1;
+			pol10.terminos[i].exp = pol10.terminos[i].exp;
+			pol10.terminos[i].coef = pol10.terminos[i].coef + pol2.terminos[k].coef;
+			k++;
+			i=i+temp;
+		}
+			
+		if(pol10.terminos[i].exp != pol2.terminos[k].exp)
+		{	
+			
+			pol10.terminos[i].exp = pol10.terminos[i].exp;
+			pol10.terminos[i].coef = pol10.terminos[i].coef;
+		}
+		i2=i;
+		if(i1!=i2)
+			i--;
+	}
+	printf("\n\n");
+	for(i=0; i<terminosf; i++)
+		printf("%.2fx^%d     ", pol10.terminos[i].coef, pol10.terminos[i].exp);
+
 /*	do
 	{
 	
