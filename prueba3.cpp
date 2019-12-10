@@ -194,9 +194,11 @@ int main(){
 
 //···········································································································
 //segunda suma
+
+	k=0;
 	for(i=0; i<=terminosf; i++)
 	{
-		k=0; 
+	
 		i1=i;
 		i2=0;
 	  //                        				i			0,1,2,3,4,5,6
@@ -224,69 +226,8 @@ int main(){
 	for(i=0; i<terminosf; i++)
 		printf("%.2fx^%d     ", pol10.terminos[i].coef, pol10.terminos[i].exp);
 
-/*	do
-	{
-	
-		if((pol1.terminos[k].exp)==expAc0)
-		{
-			pol10.terminos[cont].coef = pol1.terminos[k].coef;
-			pol10.terminos[cont].exp = pol1.terminos[k].exp;
-			expAc0++;
-			cont++;
-			k++;
-		}
-	
-		if((pol1.terminos[k].exp)!=expAc0)
-		{
-			dexp = pol1.terminos[k].exp - expAc0;
-			for(i=0; i<dexp; i++)
-			{
-				pol10.terminos[cont].coef = 0;
-				pol10.terminos[cont].exp = expAc0 + i;
-				cont = cont + 1;
-			}
-			//cont = cont + i;
-			k++;
-			expAc0 = pol1.terminos[k].exp; 
-		}
-    }while(k<terminos);
-	
-	do
-	{
-	
-		if((pol2.terminos[k2].exp)==Auw_expAc0)
-		{
-			pol20.terminos[cont2].coef = pol2.terminos[k2].coef;
-			pol20.terminos[cont2].exp = pol2.terminos[k2].exp;
-			Auw_expAc0++;
-			cont2++;
-			k2++;
-		}
-	
-		if((pol2.terminos[k2].exp)!=Auw_expAc0)
-		{
-			dexp = pol2.terminos[k2].exp - Auw_expAc0;
-			for(i=0; i<dexp; i++)
-			{
-				pol20.terminos[cont2].coef = 0;
-				pol20.terminos[cont2].exp = Auw_expAc0 + i;
-				cont2 = cont2 + 1;
-			}
-			//cont = cont + i;
-			k2++;
-			Auw_expAc0 = pol2.terminos[k2].exp;
-		}
-    }while(k2<terminos2);
     
-    termul = terminos * terminos2;
-    suma(terminosf, pol10, pol20);
-    mul(termul, terminos, terminos2, pol1, pol2);
- */  
-    
-    
-	
-	
-	free(pol1.terminos);
+    	free(pol1.terminos);
 	free(pol2.terminos);
 	free(pol10.terminos);
 	free(pol20.terminos);
