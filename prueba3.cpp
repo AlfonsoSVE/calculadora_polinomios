@@ -192,7 +192,7 @@ int main(){
 	for(i=0; i<terminosf; i++)
 		printf("%.2fx^%d     ", pol10.terminos[i].coef, pol10.terminos[i].exp);
 
-//···········································································································
+//Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
 //segunda suma
 
 	k=0;
@@ -244,12 +244,14 @@ void mul(int nmul, int ter1, int ter2, pol n1, pol n2)
 	polmul.terminos =(mon*)malloc(nmul*sizeof(mon));
 
 	for (i=0; i<ter1; i++)
-    	for(j=0; i<ter2; j++)
+    	for(j=0; j<ter2; j++)
 			{   
 				polmul.terminos[j].exp = pol1.terminos[i].exp + pol2.terminos[j].exp;
 				polmul.terminos[j].coef = pol1.terminos[i].coef * pol2.terminos[j].coef;
 			}
-			
+	for(i=0; i<nmul; i++)
+	printf("%fx^%d", polmul.terminos[j].coef, polmul.terminos[j].coef);
+	
 	free(polmul.terminos);
 
 }
